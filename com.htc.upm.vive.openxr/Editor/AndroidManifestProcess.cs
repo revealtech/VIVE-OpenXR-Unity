@@ -47,8 +47,8 @@ namespace VIVE.OpenXR.Editor
 
 		protected override void OnPostprocessBuildExt(BuildReport report)
 		{
-			if (File.Exists(_manifestPath))
-				File.Delete(_manifestPath);
+			//if (File.Exists(_manifestPath))
+			//	File.Delete(_manifestPath);
 		}
 
 		private string _manifestFilePath;
@@ -333,4 +333,3 @@ namespace VIVE.OpenXR.Editor
 		}
 	}
 }
-
