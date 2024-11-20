@@ -388,6 +388,9 @@ namespace VIVE.OpenXR.CompositionLayer.Passthrough
 		/// </param>
 		public static bool DestroyPassthrough(int passthroughID)
 		{
+#if !UNITY_STANDALONE && !UNITY_ANDROID
+			return false;
+#endif
 			if (!checkPassthroughFeatureInstance())
 			{
 				ERROR("HTC_Passthrough feature instance not found.");
@@ -409,7 +412,7 @@ namespace VIVE.OpenXR.CompositionLayer.Passthrough
 			if(passthrough2meshTransformInfoPtr.ContainsKey(passthroughID)) Marshal.FreeHGlobal(passthrough2meshTransformInfoPtr[passthroughID]);
 			passthrough2meshTransformInfoPtr.Remove(passthroughID);
 			passthrough2meshTransform.Remove(passthroughID);
-			
+
 			return true;
 #endif
 #if UNITY_ANDROID
@@ -440,6 +443,9 @@ namespace VIVE.OpenXR.CompositionLayer.Passthrough
 		/// </param>
 		public static bool SetPassthroughAlpha(int passthroughID, float alpha, bool autoClamp = true)
 		{
+#if !UNITY_STANDALONE && !UNITY_ANDROID
+			return false;
+#endif
 			if (!checkPassthroughFeatureInstance())
 			{
 				ERROR("HTC_Passthrough feature instance not found.");
@@ -496,6 +502,9 @@ namespace VIVE.OpenXR.CompositionLayer.Passthrough
 		/// </param>
 		public static bool SetProjectedPassthroughMesh(int passthroughID, [In, Out] Vector3[] vertexBuffer, [In, Out] int[] indexBuffer, bool convertFromUnityToOpenXR = true)
 		{
+#if !UNITY_STANDALONE && !UNITY_ANDROID
+			return false;
+#endif
 			if (!checkPassthroughFeatureInstance())
 			{
 				ERROR("HTC_Passthrough feature instance not found.");
@@ -576,6 +585,9 @@ namespace VIVE.OpenXR.CompositionLayer.Passthrough
 		/// </param>
 		public static bool SetProjectedPassthroughMeshTransform(int passthroughID, ProjectedPassthroughSpaceType spaceType, Vector3 meshPosition, Quaternion meshOrientation, Vector3 meshScale, bool trackingToWorldSpace = true, bool convertFromUnityToOpenXR = true)
 		{
+#if !UNITY_STANDALONE && !UNITY_ANDROID
+			return false;
+#endif
 			if (!checkPassthroughFeatureInstance())
 			{
 				ERROR("HTC_Passthrough feature instance not found.");
@@ -642,6 +654,9 @@ namespace VIVE.OpenXR.CompositionLayer.Passthrough
 		/// </param>
 		public static bool SetPassthroughLayerType(int passthroughID, LayerType layerType, uint compositionDepth = 0)
 		{
+#if !UNITY_STANDALONE && !UNITY_ANDROID
+			return false;
+#endif
 			if (!checkPassthroughFeatureInstance())
 			{
 				ERROR("HTC_Passthrough feature instance not found.");
@@ -677,6 +692,9 @@ namespace VIVE.OpenXR.CompositionLayer.Passthrough
 		/// </param>
 		public static bool SetProjectedPassthroughSpaceType(int passthroughID, ProjectedPassthroughSpaceType spaceType)
 		{
+#if !UNITY_STANDALONE && !UNITY_ANDROID
+			return false;
+#endif
 			if (!checkPassthroughFeatureInstance())
 			{
 				ERROR("HTC_Passthrough feature instance not found.");
@@ -724,6 +742,9 @@ namespace VIVE.OpenXR.CompositionLayer.Passthrough
 		/// </param>
 		public static bool SetProjectedPassthroughMeshPosition(int passthroughID, Vector3 meshPosition, bool trackingToWorldSpace = true, bool convertFromUnityToOpenXR = true)
 		{
+#if !UNITY_STANDALONE && !UNITY_ANDROID
+			return false;
+#endif
 			if (!checkPassthroughFeatureInstance())
 			{
 				ERROR("HTC_Passthrough feature instance not found.");
@@ -786,6 +807,9 @@ namespace VIVE.OpenXR.CompositionLayer.Passthrough
 		/// </param>
 		public static bool SetProjectedPassthroughMeshOrientation(int passthroughID, Quaternion meshOrientation, bool trackingToWorldSpace = true, bool convertFromUnityToOpenXR = true)
 		{
+#if !UNITY_STANDALONE && !UNITY_ANDROID
+			return false;
+#endif
 			if (!checkPassthroughFeatureInstance())
 			{
 				ERROR("HTC_Passthrough feature instance not found.");
@@ -841,6 +865,9 @@ namespace VIVE.OpenXR.CompositionLayer.Passthrough
 		/// </param>
 		public static bool SetProjectedPassthroughScale(int passthroughID, Vector3 meshScale)
 		{
+#if !UNITY_STANDALONE && !UNITY_ANDROID
+			return false;
+#endif
 			if (!checkPassthroughFeatureInstance())
 			{
 				ERROR("HTC_Passthrough feature instance not found.");
